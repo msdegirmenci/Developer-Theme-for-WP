@@ -259,6 +259,51 @@ function developer_theme_customize_register( $wp_customize ) {
         'type'    => 'text',
     ) );
 
+    // Skills Section
+    $wp_customize->add_section( 'sidebar_skills_section', array(
+        'title'       => __( 'Skills', 'developer-theme-wp' ),
+        'priority'    => 35,
+    ) );
+
+    $wp_customize->add_setting( 'sidebar_skills_intro', array(
+        'default'           => 'Intro about your skills goes here. Keep the list lean and only show your primary skillset.',
+        'sanitize_callback' => 'wp_kses_post',
+    ) );
+
+    $wp_customize->add_control( 'sidebar_skills_intro', array(
+        'label'   => __( 'Skills Intro Text', 'developer-theme-wp' ),
+        'section' => 'sidebar_skills_section',
+        'type'    => 'textarea',
+    ) );
+
+    $wp_customize->add_setting( 'sidebar_skills', array(
+        'default'           => json_encode( array(
+            array( 'name' => 'Python & Django', 'level' => 96, 'label' => 'Expert' ),
+            array( 'name' => 'Javascript & jQuery', 'level' => 94, 'label' => 'Expert' ),
+            array( 'name' => 'HTML5, CSS3, SASS & LESS', 'level' => 93, 'label' => 'Expert' ),
+            array( 'name' => 'Ruby on Rails', 'level' => 86, 'label' => 'Pro' ),
+        ) ),
+        'sanitize_callback' => 'wp_kses_post',
+    ) );
+
+    $wp_customize->add_control( 'sidebar_skills', array(
+        'label'       => __( 'Skills (JSON Format)', 'developer-theme-wp' ),
+        'section'     => 'sidebar_skills_section',
+        'type'        => 'textarea',
+        'description' => __( 'Format: [{"name":"Skill Name","level":95,"label":"Expert"},...]', 'developer-theme-wp' ),
+    ) );
+
+    $wp_customize->add_setting( 'sidebar_skills_link', array(
+        'default'           => '#',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+
+    $wp_customize->add_control( 'sidebar_skills_link', array(
+        'label'   => __( 'Skills Link (GitHub Profile URL)', 'developer-theme-wp' ),
+        'section' => 'sidebar_skills_section',
+        'type'    => 'url',
+    ) );
+
     // Footer Credits Section
     $wp_customize->add_section( 'footer_credits', array(
         'title'       => __( 'Footer Credits', 'developer-theme-wp' ),
