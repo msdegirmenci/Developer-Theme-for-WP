@@ -1,0 +1,20 @@
+/*
+Theme Name: Developer Theme for WordPress
+Theme URI: https://themes.3rdwavemedia.com/
+Author: Xiaoying Riley
+Author URI: https://themes.3rdwavemedia.com/
+Description: Bootstrap Portfolio/Resume Theme for Developers
+Version: 1.0.0
+License: Creative Commons Attribution 3.0 License
+License URI: http://creativecommons.org/licenses/by/3.0/
+Text Domain: developer-theme-wp
+Domain Path: /languages
+Tags: portfolio, resume, developer, bootstrap, responsive, dark-mode
+
+This theme is a Bootstrap-based portfolio and resume template designed for developers. 
+It includes a dark mode toggle, responsive design, and various sections for showcasing projects,
+work experience, skills, education, and more.
+*/
+
+/* Import original theme styles */
+@import url("assets/css/styles.css");
